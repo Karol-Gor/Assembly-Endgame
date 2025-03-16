@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  background-color: #262626;
+  color: #D9D9D9;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  text-align: center;
+}
+
+header > h2 {
+  font-weight: 450;
+  font-size: 1.25rem;
+  color: #F9F4DA;
+  margin: 20px 0px 0px 0px;
+}
+
+header > p {
+  max-width: 360px;
+  font-size: 0.875rem;
+  color: #8E8E8E;
+  margin: 5px 0 0 0;
+}
+
+.status-box {
+  width: 360px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  background-color: #10A95B;
+  color: #F9F4DA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.status-box > h2 {
+  font-size: 1.25rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.status-box > p {
+  margin: 0;
+}
+
+.chips-section {
+  margin-top: 36px;
+  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.chip {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.chip > span {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin: 0 5px 0 5px;
+}
+
