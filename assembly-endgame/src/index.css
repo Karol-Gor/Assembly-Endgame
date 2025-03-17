@@ -15,6 +15,9 @@ body {
 
 header {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header > h2 {
@@ -40,9 +43,10 @@ header > p {
   color: #F9F4DA;
   display: flex;
   flex-direction: column;
+  justify-self: center;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .status-box > h2 {
@@ -56,7 +60,7 @@ header > p {
 }
 
 .chips-section {
-  margin-top: 36px;
+  margin-top: 30px;
   max-width: 300px;
   display: flex;
   flex-wrap: wrap;
@@ -81,3 +85,43 @@ header > p {
   margin: 0 5px 0 5px;
 }
 
+.word {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+.word .letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  background-color: #323232;
+  color: #F9F4DA;
+  border-bottom: solid #F9F4DA;
+  margin: 0 2px;
+}
+
+.keyboard {
+  display: flex;
+  max-width: 480px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 30px;
+}
+
+.keyboard .key {
+  height: 40px;
+  aspect-ratio: 1 / 1;
+  border-radius: 5px;
+  background-color: #FCBA29;
+  color: #1E1E1E;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-weight: 600;
+  border: 2px solid #D7D7D7;
+}
