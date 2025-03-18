@@ -17,11 +17,10 @@ export default function App() {
 
     const wrongGuessCount = countWrongAttempts()
 
-
-    // const isGameWon = [...currentWord].filter(letter => guessedLetters.includes(letter)) === [...currentWord].length
     const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
     const isGameLost = languages.length - wrongGuessCount <= 1
     const isGameOver = isGameWon || isGameLost
+    const isLastLetterWrong = !currentWord.includes(guessedLetters[guessedLetters.length-1])
         
     function countWrongAttempts () {
         let counter = 0
@@ -40,9 +39,13 @@ export default function App() {
             <Status
                 isGameWon={isGameWon}
                 isGameLost={isGameLost}
+                wrongGuessCount={wrongGuessCount}
+                languages={languages}
+                isLastLetterWrong={isLastLetterWrong}   
             />
             <LanguageChipsSection
                wrongGuessCount={wrongGuessCount}
+               languages={languages}
             />
             <WordSection 
                 currentWord={currentWord}

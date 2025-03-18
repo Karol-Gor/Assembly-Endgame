@@ -1,5 +1,5 @@
 import clsx from "clsx"
-export default function Key ({letter, guessedLetters, currentWordArray, setGuessedLetters}) {
+export default function Key ({letter, guessedLetters, currentWordArray, setGuessedLetters, isGameOver}) {
 
     function addLetter() {
         setGuessedLetters(prevLetters => {
@@ -38,6 +38,7 @@ export default function Key ({letter, guessedLetters, currentWordArray, setGuess
             name={letter} 
             onClick={addLetter}
             style={customStyle}
+            disabled={isGameOver}
         >{letter}</button>
     )
 }

@@ -1,11 +1,9 @@
 import LanguageChip from "./LanguageChip";
-import { languages } from "../resources/languages"
 
-export default function LanguageChipsSection ({wrongGuessCount}) {
+export default function LanguageChipsSection ({wrongGuessCount, languages}) {
 
     const languageChipsComponents = languages.map(
         (item, index) => {
-        console.log(`index: ${index}, wrongGuessCount: ${wrongGuessCount}`)
         return (<LanguageChip 
             key = {item.name} 
             language = {item}

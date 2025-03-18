@@ -10,12 +10,14 @@ export default function KeyboardSection ( {alphabet, guessedLetters, currentWord
             guessedLetters={guessedLetters}
             currentWordArray = {currentWordArray}
             setGuessedLetters={setGuessedLetters}
+            isGameOver={isGameOver}
         />
     )
 
     return (
         <>        
-            <section className="keyboard">
+            <section 
+                className="keyboard">
                 {keys}
             </section>  
             {isGameOver && <button className="new-game">
