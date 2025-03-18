@@ -1,16 +1,21 @@
 import Key from "./Key"
-export default function KeyboardSection ( {alphabet, guessedLetters, currentWordArray, isGameOver, setGuessedLetters} ) {
+export default function KeyboardSection ( props ) {
 
+    function resetGame() {
+        props.setIsReload(prevValue => !prevValue)
+        props.setGuessedLetters([])
+        props.setIsLoading(false)
+    }
 
-    const keys = alphabet.map(
+    const keys = props.alphabet.map(
         letter => 
         <Key 
             key = {letter} 
             letter = {letter}
-            guessedLetters={guessedLetters}
-            currentWordArray = {currentWordArray}
-            setGuessedLetters={setGuessedLetters}
-            isGameOver={isGameOver}
+            guessedLetters={props.guessedLetters}
+            currentWordArray = {props.currentWordArray}
+            setGuessedLetters={props.setGuessedLetters}
+            isGameOver={props.isGameOver}
         />
     )
 
@@ -20,7 +25,10 @@ export default function KeyboardSection ( {alphabet, guessedLetters, currentWord
                 className="keyboard">
                 {keys}
             </section>  
-            {isGameOver && <button className="new-game">
+            {props.isGameOver && <button 
+                className="new-game"
+                onClick={resetGame}
+            >
                 New Game
             </button>}
         </>

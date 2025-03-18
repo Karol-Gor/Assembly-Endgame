@@ -43,7 +43,12 @@ export default function Status ({isGameWon, isGameLost, wrongGuessCount, languag
         backgroundColor: isGameLost ? "#BA2A2A" : (isGameWon ? "#10A95B" : "") 
     }
     return (
-        <div className={statusClassName} style={statusStyling}>
+        <div 
+            className={statusClassName} 
+            style={statusStyling}
+            aria-live="polite" 
+            role="status" 
+        >
             {renderGameStatus()}
         </div>
     )

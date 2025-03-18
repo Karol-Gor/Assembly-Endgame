@@ -39,6 +39,8 @@ export default function Key ({letter, guessedLetters, currentWordArray, setGuess
             onClick={addLetter}
             style={customStyle}
             disabled={isGameOver}
+            aria-disabled={guessedLetters.includes(letter)}
+            aria-label={`Letter ${letter}`}
         >{letter}</button>
     )
 }

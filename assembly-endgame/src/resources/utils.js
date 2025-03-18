@@ -1,3 +1,5 @@
+import {words} from "./words"
+
 export function getFarewellText(language) {
     const options = [
         `Farewell, ${language}`,
@@ -16,4 +18,14 @@ export function getFarewellText(language) {
 
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
+}
+
+export function getRandomWord(setCurrentWord) {
+    fetch("https://random-word-api.vercel.app/api?words=1")
+    .then(res => res.json())
+    .then(data => setCurrentWord(data[0]))
+    .catch(e => {
+        const randomIndex = Math.floor(Math.random() * words.length); 
+        setCurrentWord(words[randomIndex])
+    })
 }
