@@ -39,7 +39,6 @@ header > p {
   height: 60px;
   border: none;
   border-radius: 5px;
-  background-color: #10A95B;
   color: #F9F4DA;
   display: flex;
   flex-direction: column;
@@ -77,12 +76,27 @@ header > p {
   align-items: center;
   height: 25px;
   border-radius: 5px;
+  position: relative;
 }
 
 .chip > span {
   font-size: 0.75rem;
   font-weight: bold;
   margin: 0 5px 0 5px;
+}
+
+.chip.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .word {
@@ -124,4 +138,26 @@ header > p {
   font-family: "Hanken Grotesk", Arial, sans-serif;
   font-weight: 600;
   border: 2px solid #D7D7D7;
+}
+
+.keyboard .key .correct {
+  background-color: #10A95B;
+}
+
+.keyboard .key .wrong {
+  background-color: #EC5D49;
+}
+
+button.new-game {
+  background-color: #11B5E5;
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
+  width: 225px;
+  height: 40px;
+  padding: 6px 12px;
+  display: block;
+  margin-inline: auto;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
